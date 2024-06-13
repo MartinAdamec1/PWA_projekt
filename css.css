@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+}
+b {
+    font-weight: bold;
+}
+
+u {
+    text-decoration: underline;
+}
+nav {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px;
+}
+nav a:hover {
+    background-color: #d0caca;
+}
+.right {
+    margin-left: auto;
+}
+hr {
+    margin: 0;
+    border: none;
+    border-top: 1px solid #000000;
+}
+.title {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+}
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    width: 100%
+}
+.text-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+}
+.naslov {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+.odjava {
+    font-size: 1em;
+    margin: 10px 0;
+    text-align: center;
+}
+.prijava {
+    width: 100%;
+    font-size: 1em;
+    margin: 10px 0;
+    text-align: center;
+}
+.podnaslov {
+    color: lightgrey;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+.bold-paragraph {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.centered-paragraphs::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+    margin-right: 5px;
+}
+.textArticle{
+    margin-right: 5px;
+}
+.textArticle::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+    margin-right: 5px;
+}
+.centered-paragraphs .highlight {
+    color: red;
+}
+.centered-paragraphs {
+    text-align: left;
+    margin: 20px 0;
+    margin-bottom: 100px;
+}
+.centered-paragraphs p {
+    margin: 20px 0;
+}
+footer {
+    background-color: #888888;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px 0;
+}
+footer h2 {
+    font-size: 2em;
+}
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.article {
+    width: 25%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 50px;
+}
+.article2 {
+    width: 70%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5%;
+}
+article {
+    width: 25%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 50px;
+}
+.article img {
+    width: 100%;
+    height: 30%;
+    display: block;
+    margin: 0 auto;
+}
+.article h2 {
+    margin-top: 10px;
+    text-align: left;
+}
+.article p {
+    margin-top: 10px;
+}
+.divider {
+    
+    font-weight: bold;
+    width: 100%;
+    margin: 20px auto;
+    text-align: left;
+}
+.divider hr {
+    border: none;
+    border-top: 3px solid #333;
+    width: 10%;
+}
+.category {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: -15px;
+}

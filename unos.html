@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma za unos vijesti</title>
+    <link rel="stylesheet" href="css.css">
+    <script>
+        function validateForm(event) {
+            let isValid = true;
+
+            const title = document.querySelector('input[name="title"]');
+            const about = document.querySelector('textarea[name="about"]');
+            const content = document.querySelector('textarea[name="content"]');
+            const image = document.querySelector('input[name="image"]');
+            const category = document.querySelector('select[name="category"]');
+            
+            title.style.borderColor = "";
+            about.style.borderColor = "";
+            content.style.borderColor = "";
+            image.style.borderColor = "";
+            category.style.borderColor = "";
+
+            document.getElementById("title-error").textContent = "";
+            document.getElementById("about-error").textContent = "";
+            document.getElementById("content-error").textContent = "";
+            document.getElementById("image-error").textContent = "";
+
+            if (title.value.length < 5 || title.value.length > 30) {
+                title.style.borderColor = "red";
+                document.getElementById("title-error").textContent = "Naslov vijesti mora imati između 5 i 30 znakova.";
+                isValid = false;
+            }
+
+            if (about.value.length < 10 || about.value.length > 100) {
+                about.style.borderColor = "red";
+                document.getElementById("about-error").textContent = "Kratki sadržaj vijesti mora imati između 10 i 100 znakova.";
+                isValid = false;
+            }
+
+            if (content.value.trim() === "") {
+                content.style.borderColor = "red";
+                document.getElementById("content-error").textContent = "Tekst vijesti ne smije biti prazan.";
+                isValid = false;
+            }
+
+            if (image.files.length === 0) {
+                image.style.borderColor = "red";
+                document.getElementById("image-error").textContent = "Slika mora biti odabrana.";
+                isValid = false;
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+            form.addEventListener("submit", validateForm);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.php">HOME</a>
+            <a href="politik.html">ČLANCI</a>
+            <a href="kategorije.php?category=sport">SPORT</a>
+            <a href="kategorije.php?category=kultura">KULTURA</a>
+            <a href="unos.html">UNOS</a>
+            <a href="registracija.php">REGISTRACIJA</a>
+            <a href="administrator.php">ADMINISTRATOR</a>
+        </nav>
+    </header>
+    <hr>
+    <h1 class="title">Frankfurter Allgemeiner</h1>
+    <hr>
+
+    <main>
+        <div class="odjava">
+            <form action="skripta.php" method="POST" enctype="multipart/form-data">
+                <div class="form-item">
+                    <label for="title">Naslov vijesti</label>
+                    <div class="form-field">
+                        <input type="text" name="title" class="form-field-textual">
+                        <div id="title-error" class="error-message" style="color:red;"></div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <label for="about">Kratki sadržaj vijesti (do 100 znakova)</label>
+                    <div class="form-field">
+                        <textarea name="about" id="" cols="30" rows="10" class="form-field-textual"></textarea>
+                        <div id="about-error" class="error-message" style="color:red;"></div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <label for="content">Sadržaj vijesti</label>
+                    <div class="form-field">
+                        <textarea name="content" id="" cols="30" rows="10" class="form-field-textual"></textarea>
+                        <div id="content-error" class="error-message" style="color:red;"></div>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="image">Slika:</label><br>
+                    <input type="file" id="image" name="image" accept="image/*" required><br>
+                    <div id="image-error" class="error-message" style="color:red;"></div>
+                </div>
+                <div class="form-item">
+                    <label for="category">Kategorija vijesti</label>
+                    <div class="form-field">
+                        <select name="category" id="" class="form-field-textual">
+                            <option value="">Odaberite kategoriju</option>
+                            <option value="sport">Sport</option>
+                            <option value="kultura">Kultura</option>
+                        </select>
+                        <div id="category-error" class="error-message" style="color:red;"></div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <label>Spremiti u arhivu:</label>
+                    <div class="form-field">
+                        <input type="checkbox" name="archive">
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <button type="reset" value="Poništi">Poništi</button>
+                    <button type="submit" value="Prihvati">Pošalji</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <h2>Frankfurter Allgemeiner</h2>
+    </footer>
+</body>
+</html>
